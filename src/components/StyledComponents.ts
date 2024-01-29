@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const StyledButton = styled.button`
   padding: 10px;
@@ -40,6 +40,7 @@ export const Operator = styled.div`
   box-shadow: 0px 0px 15px 0px rgba(49, 23, 9, 0.4);
   &:hover {
     transform: scale(1.1);
+    transition: transform 0.5s;
   }
 `;
 
@@ -69,4 +70,56 @@ export const ErrorMes = styled.p`
 
 export const FlexDiv = styled.div`
   display: flex;
+`;
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
+
+export const ErrorModal = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #fff;
+  border: 4px solid #ff9999;
+  animation: 0.5s ${fadeIn} ease-out;
+`;
+
+export const OkModal = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #fff;
+  border: 4px solid #a8ffd2;
+  animation: 0.5s ${fadeIn} ease-out;
+`;
+
+export const ModalPopup = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+`;
+
+export const EscapeButton = styled.button`
+  padding: 2px;
+  background-color: #efdecd;
+  margin: 10px 0 0 0;
+  border: none;
+  &:hover {
+    background-color: #bc987e;
+  }
 `;

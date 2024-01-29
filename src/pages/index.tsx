@@ -29,7 +29,6 @@ export const getStaticProps: GetStaticProps = async (operators: any) => {
 const Home = ({
   operators,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log("operators", operators);
   return (
     <div>
       <Head>
