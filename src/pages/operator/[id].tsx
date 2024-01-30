@@ -21,9 +21,8 @@ const CarPage = () => {
   const [sumCheck, setSumCheck] = useState(0);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [modal, setModal] = useState(false);
-
   const params = useParams();
-  const id = params.id;
+  const id = params?.id || 'MTS';
 
   const handlePay = () => {
     console.log(phoneCheck, sumCheck)
